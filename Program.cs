@@ -5,16 +5,20 @@ public class Program
 {
     static void Main(string[] args)
     {
-        Student std = new Student() { Name = "Superman" };
+        var student = new Student("John");
 
-        StudentRepository studentRepos = new StudentRepository(new GalaxyConsoleContext());
+        var studentRepos = new StudentRepository(new GalaxyConsoleContext());
 
-        studentRepos.AddStudent(std);
+        studentRepos.AddStudent(student);
     }
 }
 
 public class Student
 {
+    public Student(string name)
+    {
+        Name = name;
+    }
     public int Id { get; set; }
     public string Name { get; set; }
 }
